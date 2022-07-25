@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.button{
+  margin: 300px;
+  display: block;
+  text-decoration: none;
+  color: #36640d;
+}
+.content{
+ background: #ddd;
+ padding: 10px 15px;
+ position: relative;
+ z-index: 2;
+ overflow: hidden;
+ display: inline-block;
+}
+.content:hover{
+  background: none;
+  color: #fff;
+}
+.content::before{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: green;
+  top: 0;
+  left: -50%;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.button:hover .content::before{
+  left: 0;
+}
+.content::after{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: red;
+  top: 0;
+  right: -50%;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.button:hover .content::after{
+  right: 0;
+}
